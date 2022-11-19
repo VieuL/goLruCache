@@ -1,4 +1,4 @@
-module VieuL/goLruCache
+module github.com/VieuL/goLruCache
 
 go 1.19
 
