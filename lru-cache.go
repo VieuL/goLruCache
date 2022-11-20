@@ -37,7 +37,7 @@ func (lru *LruCache) Get(key string) any {
 }
 
 func (lru *LruCache) Set(key string, value any) {
-	if lru.size()+binary.Size(value) >= lru.options.maxSize {
+	if (lru.size()+binary.Size(value) >= lru.options.maxSize) || len(lru.keys) == lru.options.maxItem {
 		lru.removeOldest()
 	}
 	lru.keys = append(lru.keys, key)
